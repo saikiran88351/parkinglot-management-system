@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="app.css">
+    <title>Parking Lot Management System</title>
+</head>
+
+<body>
+    <div class="container-md">
+    <h1> PARKING LOT</h1>
+    <form>
+    <ul>
+        <div>
+            <label for="item">Name :  </label>
+            <input id="name" type="text" placeholder="Name" name="name" required>
+        </div>
+        <div>
+            <label for="item">Vehicle Name :  </label>
+            <input id="vname" type="text" placeholder="Vehicle Name" name="vname" required>
+        </div>
+
+        <div>
+            <label for="item">Vehicle Number : </label>
+            <input id="vnum" type="text" placeholder="Vehicle Number" name="vnum" required>
+        </div>
+        <div>
+            <label for="item">Entry Date : </label>
+            <input id="endate" type="date" name="endate" required>
+        </div>
+
+        <div>
+            <label for="item">Exit Date : </label>
+            <input id="exdate" type="date" name="exdate" required>
+        </div>
+        <div>
+        <button>Submit</button>
+        </div>
+    </ul>
+    </form>
+    <br>
+    <h2>VEHICLES IN A PARKING LOT</h2>
+    <br>
+
+    <table  class="table table-dark table-striped">
+        <thead>
+            <tr>
+
+                <th scope="col">Name</th>
+                <th scope="col">Vehicle Name</th>
+                <th scope="col">Vehicle Number</th>
+                <th scope="col">Entry Date</th>
+                <th scope="col">Exit Date</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <br><br>
+    </div>
+    <br>
+    <br>
+   
+
+    <script>
+        const form = document.querySelector('form');
+        const addList = document.querySelector('#list');
+        const addtdata = document.querySelector("tbody")
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.querySelector('#name');
+            const vname = document.querySelector('#vname');
+            const vnum = document.querySelector('#vnum');
+            const endate = document.querySelector('#endate');
+            const exdate = document.querySelector('#exdate');
+
+
+
+
+            const newtr = document.createElement('tr');
+            addtdata.appendChild(newtr)
+            newtr.innerHTML = ` 
+           
+            <td>${name.value}</td>
+            <td>${vname.value}</td>
+            <td>${vnum.value}</td>
+            <td>${endate.value}</td>
+            <td>${exdate.value}</td> `
+
+            name.value = '';
+            vname.value = '';
+            vnum.value = '';
+            endate.value = '';
+            exdate.value = '';
+            sno.value = '';
+        });
+    </script>
+</body>
+
+</html>
